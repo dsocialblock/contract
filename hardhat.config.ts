@@ -31,9 +31,9 @@ const config: HardhatUserConfig = {
       accounts: [process.env.DEPLOYER_PRIVATE_KEY!],
     },
     hardhat: {
-      // forking: {
-      //   url: process.env.POLYGON_NODE_URL!,
-      // },
+      forking: {
+        url: process.env.POLYGON_NODE_URL!,
+      },
       accounts: [
         {
           privateKey: process.env.DEPLOYER_PRIVATE_KEY!,
