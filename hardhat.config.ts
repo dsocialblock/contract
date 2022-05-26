@@ -11,6 +11,9 @@ import "hardhat-deploy-ethers";
 import "hardhat-abi-exporter";
 import "hardhat-tracer";
 
+const infuraApiKey = process.env.INFURA_API_KEY!;
+const privateKey = process.env.DEPLOYER_PRIVATE_KEY!;
+
 const config: HardhatUserConfig = {
   solidity: {
     version: "0.8.7",
@@ -28,7 +31,7 @@ const config: HardhatUserConfig = {
   networks: {
     local: {
       url: "http://127.0.0.1:8545",
-      accounts: [process.env.DEPLOYER_PRIVATE_KEY!],
+      accounts: [privateKey!],
     },
     hardhat: {
       forking: {
@@ -36,14 +39,18 @@ const config: HardhatUserConfig = {
       },
       accounts: [
         {
-          privateKey: process.env.DEPLOYER_PRIVATE_KEY!,
+          privateKey: privateKey!,
           balance: parseEther("100").toString(),
         },
       ],
     },
+    kovan: {
+      url: `https://kovan.infura.io/v3/${infuraApiKey}`,
+      accounts: [privateKey],
+    },
     polygon: {
       url: process.env.POLYGON_NODE_URL!,
-      accounts: [process.env.DEPLOYER_PRIVATE_KEY!],
+      accounts: [privateKey!],
     },
   },
   mocha: {
