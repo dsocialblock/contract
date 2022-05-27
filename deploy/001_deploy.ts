@@ -27,6 +27,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     args: [
       addresses.vrfCoordinatorAddress,
       addresses.linkTokenAddress,
+      addresses.VRFKeyHash,
+      addresses.VRFFee,
       addresses.keeperRegistryAddress,
     ],
     from: deployer,
@@ -37,6 +39,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     args: [
       addresses.vrfCoordinatorAddress,
       addresses.linkTokenAddress,
+      addresses.VRFKeyHash,
+      addresses.VRFFee,
       addresses.keeperRegistryAddress,
       nftMint.address,
       socialLegoToken.address,

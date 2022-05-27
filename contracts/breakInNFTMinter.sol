@@ -40,10 +40,12 @@ contract NFTMint is
     constructor(
         address _vrfCoordinator,
         address _link,
+        bytes32 _keyHash,
+        uint256 _fee,
         address _keeperRegistryAddress
     ) VRFConsumerBase(_vrfCoordinator, _link) ERC721("BreakInNFTs", "BIN") {
-        keyHash = 0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4;
-        fee = 0.1 * 10**18; // 0.1 LINK (Varies by network)
+        keyHash = _keyHash;
+        fee = _fee; // (Varies by network)
 
         keeperRegistryAddress = _keeperRegistryAddress;
     }
