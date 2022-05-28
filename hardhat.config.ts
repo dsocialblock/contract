@@ -52,6 +52,10 @@ const config: HardhatUserConfig = {
       url: process.env.POLYGON_NODE_URL!,
       accounts: [privateKey!],
     },
+    polygonTestnet: {
+      url: process.env.POLYGON_TESTNET_URL!,
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY!],
+    },
   },
   mocha: {
     timeout: 200000,

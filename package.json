@@ -11,7 +11,9 @@
     "deploy:polygon": "hardhat deploy --network polygon",
     "verify:polygon": "hardhat --network polygon etherscan-verify",
     "deploy:kovan": "hardhat deploy --network kovan",
-    "verify:kovan": "hardhat --network kovan etherscan-verify"
+    "verify:kovan": "hardhat --network kovan etherscan-verify",
+    "deploy:polygonTestnet": "hardhat deploy --network polygonTestnet",
+    "verify:polygonTestnet": "hardhat --network polygonTestnet etherscan-verify"
   },
   "dependencies": {
     "@chainlink/contracts": "^0.4.1",
